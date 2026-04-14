@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DCC: PROTOTYPE MAIN PAGE </title>
+    <style>
+        .error { display: none; color: red; font-weight: bold; }
+        .error.visible { display: block; }
+        fieldset { margin-bottom: 15px; }
+        .navegacion { margin-top: 20px; padding-top: 10px; border-top: 1px solid #ccc; }
+        #resumen-actividad { margin-top: 20px; padding: 15px; background-color: #f0f0f0; border: 1px solid #333; display: none; }
+    </style>
+</head>
+
+<body>
+    <h1> DCC Ingeniería UChile</h1>
+    <h2> Registra tus Actividades </h2>
+
+    <form name="Actividades" id="actividades" onsubmit="return validarActividades(event)">
+        
+        <p>
+            <label for="actividad"> ¿Qué actividad te gusta hacer en tu tiempo libre? </label><br>
+            <textarea id="actividad" name="actividad" placeholder="Escribe Aquí"></textarea>
+            <span class="error" id="error-actividad"> Por favor ingrese actividad </span>
+        </p>
+
+        <div>
+            <label> ¿Qué días de la semana la realizas? </label>
+            <p id="días-semana">
+                <label><input type="checkbox" name="día" value="Lunes"> Lunes </label>
+                <label><input type="checkbox" name="día" value="Martes"> Martes </label>
+                <label><input type="checkbox" name="día" value="Miércoles"> Miércoles </label>
+                <label><input type="checkbox" name="día" value="Jueves"> Jueves </label>
+                <label><input type="checkbox" name="día" value="Viernes"> Viernes </label>
+                <label><input type="checkbox" name="día" value="Sábado"> Sábado </label>
+                <label><input type="checkbox" name="día" value="Domingo"> Domingo </label>
+            </p>
+            <span class="error" id="err-días"> Por favor seleccione al menos un día </span>
+        </div>
+
+        <p>
+            <label for="horas"> ¿Cuántas horas a la semana? </label><br>
+            <input type="number" name="horas" id="horas" placeholder="Cant. Horas" style="width: 100px;">
+            <span class="error" id="err-horas"> Por favor indique la duración. </span>
+        </p>
+
+        <p>
+            <label for="archivo"> ¡Muéstranos! (Fotos o Videos) </label><br>
+            <input type="file" id="archivo" name="archivo" accept="image/*,video/*">
+            <span class="error" id="error-archivo"> Por favor suba al menos una foto o video </span>
+        </p>
+
+        <p>
+            <label for="enlace"> Enlace a contenido propio: </label><br>
+            <input type="url" id="enlace" name="enlace" placeholder="https://ejemplo.com">
+            <span class="error" id="error-enlace"> Por favor ingrese un enlace válido </span>
+        </p>
+
+        <p>
+            <button type="submit"> Enviar </button>
+        </p>
+    </form>
+
+    <p id="resumen-actividad"></p>
+
+    <p class="navegacion">
+        <button type="button" id="boton-estadisticas"> Ver Estadísticas </button>
+        <button type="button" id="boton-usuarios"> Ver otros usuarios </button>
+        <button type="button" id="boton-registro"> Cerrar sesión </button>
+    </p>
+
+    <script src="ActividadesPagina2.js"></script>
+</body>
+</html>

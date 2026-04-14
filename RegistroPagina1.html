@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DCC: PROTOTYPE LOG IN PAGE </title>
+    <style>
+    .error {display: none; color: red; font-weight: bold;}
+    .error.visible {display: inline;}
+    .req {color: red;}
+    </style>
+</head>
+
+<body>
+    <h1> DCC Ingeniería UChile</h1>
+    <h2> Página de Registro </h2>
+    <form name="Registro" id="registro" action="ActividadesPagina2.html" method="GET" onsubmit="return validar()">
+        <p>
+            <label for="usuario"> Nombre Completo <span class="req">*</span></label>
+            <input type="text" id="usuario" name="usuario" size="40" placeholder="Juan Perez">
+            <span class="error" id="error-nombre"> Por favor ingrese su nombre </span>
+        </p>
+
+        <p>
+            <label for="rut"> RUT <span class="req">*</span></label>
+            <input type="text" id="rut" name="rut" placeholder="12345678-9">
+            <span class="error" id="error-rut"> Por favor, ingrese un rut RUT válido (Sin puntos, con guión) </span>
+        </p>    
+            
+        <p>
+            <label for="correo"> Correo <span class="req">*</span></label>
+            <input type="email" id="correo" name="correo" placeholder="ejemplo@hola.com">
+            <span class="error" id="error-correo"> Por favor, ingrese una dirección de correo válida </span>
+        </p>
+
+        <fieldset>
+            <legend> Tipo de Miembro <span class="req">*</span> </legend>
+            <label><input name="cargo" type="radio" value="pregrado" onclick="CamposExtra()"> Estudiante de Pregrado </label><br> 
+            <label><input name="cargo" type="radio" value="postgrado" onclick="CamposExtra()"> Estudiante de Postgrado </label><br> 
+            <label><input name="cargo" type="radio" value="académico" onclick="CamposExtra()"> Académico </label> <br> 
+            <label><input name="cargo" type="radio" value="funcionario" onclick="CamposExtra()"> Funcionario</label> <br>
+            <span class="error" id="error-cargo"> Por favor, seleccione una opción </span>
+
+            <p id="extra-estudiante" class="opcional" style="display: none;">
+                <label for="año"> Año de Ingreso al DCC </label><br>
+                <input type="text" id="año" name="año" placeholder="Ingrese año">
+                <span class="error" id="error-año"> Por favor ingrese un año válido (4 dígitos) </span>
+            </p>
+
+            <p id="extra-academico" class="opcional" style="display: none;">
+                <label for="código"> Código de Curso </label><br>
+                <input type="text" id="código" name="código" placeholder="CC5002-2">
+                <span class="error" id="error-facultad"> Por favor indique el código del curso del cual es docente </span>
+            </p>
+
+            <p id="extra-funcionario" class="opcional" style="display: none;">
+                <label for="trabajo"> Área de Trabajo </label><br>
+                <input type="text" id="trabajo" name="trabajo" placeholder="Ingrese área de trabajo">
+                <span class="error" id="error-trabajo"> Por favor indique su área de trabajo (Ej: Finanzas) </span>
+            </p>
+        </fieldset>
+
+        <p>
+            <button type="submit"> Registrarse </button>
+        </p>
+    </form>
+    <script src="RegistroPagina1.js"></script>
+</body>
+</html>

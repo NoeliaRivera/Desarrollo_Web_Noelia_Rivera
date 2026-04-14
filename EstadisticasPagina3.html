@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DCC: PROTOTYPE STATISTICS </title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <div class="chart-box">
+        <h3> Distribución por Tipo de Miembro </h3>
+        <div class="pie-chart" style="
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #36a2eb 0deg 240deg,      /* Pregrado */
+                #ff6384 240deg 300deg,    /* Postgrado */
+                #ffcd56 300deg 330deg,    /* Académico */
+                #4bc0c0 330deg 360deg     /* Funcionario */
+            );">
+        </div>
+        <ul class="legend" style="list-style: none; padding-top: 20px;">
+            <li style="color: #36a2eb;"><strong>■</strong> Estudiantes Pregrado (8 - 66.7%) </li>
+            <li style="color: #ff6384;"><strong>■</strong> Estudiantes Postgrado (2) </li>
+            <li style="color: #ffcd56;"><strong>■</strong> Académico (1) </li>
+            <li style="color: #4bc0c0;"><strong>■</strong> Funcionario (1) </li>
+        </ul>
+    </div>
+
+    <div class="chart-box">
+        <h3> Actividades por Categoría </h3>
+        <div class="bar-container" style="display: flex; align-items: flex-end; height: 200px; gap: 20px; border-left: 2px solid #333; border-bottom: 2px solid #333; padding: 10px;">
+            <div class="bar" style="height: 84%; width: 60px; background-color: #9966ff; position: relative; text-align: center; color: white;"> 
+                5 <div class="bar-label" style="position: absolute; bottom: -25px; left: 0; width: 100%; color: #333; font-size: 11px;">Recreativas</div> 
+            </div>
+            <div class="bar" style="height: 66%; width: 60px; background-color: #ff9f40; position: relative; text-align: center; color: white;"> 
+                4 <div class="bar-label" style="position: absolute; bottom: -25px; left: 0; width: 100%; color: #333; font-size: 11px;">Deportivas</div> 
+            </div>
+            <div class="bar" style="height: 34%; width: 60px; background-color: #4bc0c0; position: relative; text-align: center; color: white;"> 
+                2 <div class="bar-label" style="position: absolute; bottom: -25px; left: 0; width: 100%; color: #333; font-size: 11px;">Tecnológicas</div> 
+            </div>
+            <div class="bar" style="height: 17%; width: 60px; background-color: #ff6384; position: relative; text-align: center; color: white;"> 
+                1 <div class="bar-label" style="position: absolute; bottom: -25px; left: 0; width: 100%; color: #333; font-size: 11px;">Científica</div> 
+            </div>
+        </div>
+        <p style="margin-top: 40px; font-size: 0.9em; color: #666;"> (Eje Y: Cantidad de personas por categoría) </p>
+    </div>
+</div>
+    <div class="navegacion">
+        <button type="button" id="boton-actividades"> Volver a 'Registro de actividades' </button>
+        <button type="button" id="boton-registro"> Cerrar sesión </button>
+    </div>
+
+    <script src="EstadisticasPagina3.js"></script>
+</body>
+</html>

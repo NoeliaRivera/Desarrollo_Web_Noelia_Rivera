@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DCC: PROTOTYPE USSERS LIST </title>
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #333; padding: 10px; text-align: left; }
+        th { background-color: #f0f0f0; }
+        .filtros { margin-bottom: 20px; padding: 10px; background-color: #fafafa; border: 1px solid #ccc; }
+        .navegacion { margin-top: 20px; padding-top: 10px; border-top: 1px solid #ccc; }
+    </style>
+</head>
+
+<body>
+    <h1> DCC Ingeniería UChile</h1>
+    <h2> Miembros del Departamento </h2>
+
+    <div class="filtros">
+    <label for="FiltroUsuario"> Filtrar por tipo: </label>
+    <select id="FiltroUsuario"> <option value="todos"> Todos </option>
+        <option value="pregrado"> Estudiantes Pregrado </option>
+        <option value="postgrado"> Estudiantes Postgrado </option>
+        <option value="académico"> Académicos </option>
+        <option value="funcionario"> Funcionarios </option>
+    </select>
+
+    <label for="FiltroActividad"> Filtrar por actividad: </label>
+    <select id="FiltroActividad"> <option value="todos"> Todas </option> <option value="deportiva"> Deportiva </option>
+        <option value="tecnológica"> Tecnológica </option>
+        <option value="científica"> Científica </option>
+        <option value="recreativa"> Recreativa </option>
+        <option value="deportiva"> Deportiva </option>
+    </select>
+    
+    <button type="button" onclick="Filtrar()"> Aplicar </button>
+</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th> Nombre </th>
+                <th> Tipo de Miembro </th>
+                <th> Contacto </th>
+                <th> Actividad Principal </th>
+                <th> Tipo de Actividad </th>
+            </tr>
+        </thead>
+        <tbody id="tabla-usuarios">
+            <tr>
+                <td> Juan Perez </td>
+                <td> Estudiante Pregrado </td>
+                <td> juan.perez@dcc.uchile.cl </td>
+                <td> Natación </td>
+                <td> Deportiva </td>
+
+            </tr>
+            <tr>
+                <td> José Urzúa </td>
+                <td> Académico </td>
+                <td> jose.urzua@dcc.uchile.cl </td>
+                <td> Robótica </td>
+                <td> Tecnológica </td>
+            </tr>
+            <tr>
+                <td> Dexter Lab </td>
+                <td> Estudiante Postgrado </td>
+                <td> dexter.lab@dcc.uchile.cl </td>
+                <td> Proyectos de investigación </td>
+                <td> Científica </td>
+            </tr>
+            <tr>
+                <td> Ash Ketchum </td>
+                <td> Estudiante Pregrado </td>
+                <td> ash.ketchum@dcc.uchile.cl </td>
+                <td> Jugar videojuegos </td>
+                <td> Recreativa </td>
+            </tr>
+            <tr>
+                <td> Noelia Rivera </td>
+                <td> Estudiante Pregrado </td>
+                <td> noelia.rivera@dcc.uchile.cl </td>
+                <td> Aikido </td>
+                <td> Deportiva </td>
+            </tr>
+            <tr>
+                <td> Lisa Simpson </td>
+                <td> Estudiante Postgrado </td>
+                <td> lisa.simpson@dcc.uchile.cl </td>
+                <td> Tocar el saxofón </td>
+                <td> Recreativa </td>
+            </tr>
+            <tr>
+                <td> Seymour Skinner </td>
+                <td> Funcionario </td>
+                <td> seymour.skinner@dcc.uchile.cl </td>
+                <td> Observar Estrellas </td>
+                <td> Recreativa </td>
+            </tr>
+            <tr>
+                <td> Emilia Guevara M. </td>
+                <td> Estudiante Pregrado </td>
+                <td> emilia.guevara@dcc.uchile.cl </td>
+                <td> Fotografía </td>
+                <td> Recreativa </td>
+            </tr>
+            <tr>
+                <td> Martín Friant </td>
+                <td> Estudiante Pregrado </td>
+                <td> martin.friant@dcc.uchile.cl </td>
+                <td> Tenis de mesa </td>
+                <td> Deportiva </td>
+            </tr>
+            <tr>
+                <td> Isidora Bustamante V. </td>
+                <td> Estudiante Pregrado </td>
+                <td> isidora.bustamante@dcc.uchile.cl </td>
+                <td> Programación competitiva </td>
+                <td> Tecnológica </td>
+            </tr>
+            <tr>
+                <td> Pablo Benario </td>
+                <td> Estudiante Pregrado </td>
+                <td> pablo.benario@dcc.uchile.cl </td>
+                <td> Senderismo </td>
+                <td> Deportiva </td>
+            </tr>
+            <tr>
+                <td> Benjamín Duarte Nass </td>
+                <td> Estudiante Pregrado </td>
+                <td> benjamin.duarte@dcc.uchile.cl </td>
+                <td> Lectura de novelas </td>
+                <td> Recreativa </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="navegacion">
+        <button type="button" id="boton-actividades"> Volver a 'Registro de actividades' </button>
+        <button type="button" id="boton-registro"> Cerrar sesión </button>
+    </p>
+
+    <script src="ListadoPagina4.js"></script>
+</body>
+</html>
