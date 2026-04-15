@@ -6,3 +6,5 @@ A través de este README quería comunicar que para la TAREA 1 decidí crear 4 p
 
 En las páginas de listado y estadisticas utilizo nombres de personas reales y ficticias para poder trabajar, incluyendo algunos nombres de compañeros de la sección. Cabe aclarar que la información proporcionada sobre sus intereses es también ficticia.
 
+Me basé en los ppt y ejemplos adjuntos a ucursos 
+
