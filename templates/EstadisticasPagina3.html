@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCC: PROTOTYPE STATISTICS</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 30px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .chart-box {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .grafico {
+            width: 100%;
+            height: 500px;
+        }
+
+        .navegacion {
+            margin-top: 40px;
+        }
+
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DCC Ingeniería UChile</h1>
+    <h2>Estadísticas</h2>
+    <div class="container">
+        <div class="chart-box">
+            <h3>Miembros registrados por día</h3>
+            <div id="gLinea" class="grafico"></div>
+        </div>
+
+        <div class="chart-box">
+            <h3>Actividades por tipo</h3>
+            <div id="gTorta" class="grafico"></div>
+        </div>
+
+        <div class="chart-box">
+            <h3>Actividades por comuna</h3>
+            <div id="gBarras" class="grafico"></div>
+        </div>
+
+    </div>
+
+    <div class="navegacion">
+
+        <button
+            type="button"
+            onclick="window.location.href='{{ url_for('index') }}'">
+            Volver al inicio
+        </button>
+
+        <button
+            type="button"
+            onclick="window.location.href='{{ url_for('miembros') }}'">
+            Ver miembros
+        </button>
+
+        <button
+            type="button"
+            onclick="window.location.href='{{ url_for('actividades') }}'">
+            Ver actividades registradas
+        </button>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='EstadisticasPagina3.js') }}"></script>
+
+</body>
+</html>
