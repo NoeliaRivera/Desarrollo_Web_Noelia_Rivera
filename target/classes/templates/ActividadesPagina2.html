@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCC: Actividades Registradas</title>
+
+<style>
+    fieldset {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    .comentarios {
+        margin-top: 20px;
+    }
+
+    .comentario {
+        border-bottom: 1px solid #ccc;
+        padding: 5px;
+    }
+
+    .navegacion {
+        margin-top: 20px;
+        padding-top: 10px;
+        border-top: 1px solid #ccc;
+    }
+
+    img {
+        max-width: 250px;
+    }
+
+    video {
+        max-width: 250px;
+    }
+
+    textarea {
+        resize: none;
+    }
+</style>
+</head>
+
+<body>
+    <div th:replace="~{fragment/navbar :: navbar}"></div>
+    <h1>DCC Ingeniería UChile</h1>
+    <h3>Buscador de actividades</h3>
+    <input type="text" id="buscador" placeholder="Busca la actividad">
+    <div id="resultados"></div>
+    <h2>Actividades Registradas</h2>
+    <fieldset>
+        <legend>Listado de Actividades</legend>
+        <table>
+            <tr>
+            <th>Actividad</th>
+            <th>Tipo</th>
+            <th>Días</th>
+            <th>Acción</th>
+        </tr>
+
+        <tr th:each="actividad : ${actividades}">
+            <td th:text="${actividad.nombreActividad}"></td>
+            <td th:text="${actividad.tipo}"></td>
+            <td th:text="${actividad.dia}"></td>
+
+            <td>
+                <button type="button" th:onclick="|mostrarActividad(${actividad.id})|">
+                    Ver detalle
+                </button>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset id="detalleActividad">
+    <legend>Detalle de Actividad</legend>
+    <p>Seleccione una actividad.</p>
+</fieldset>
+
+<script th:src="@{/js/ActividadesPagina2.js}"></script>
+</body>
+</html>
